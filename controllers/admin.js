@@ -115,7 +115,7 @@ const allMessages = TryCatch(async (req, res) => {
     .populate("chat", "groupChat");
 
   const transformedMessages = messages.map(
-    ({ content, attachments, _id, sender, createdAt, chat }) => ({
+    async ({ content, attachments, _id, sender, createdAt, chat }) => ({
       _id,
       attachments,
       content,
